@@ -14,11 +14,15 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 
+import { Inter } from "@next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
 import { FiGithub } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import { RxLinkedinLogo } from "react-icons/rx";
 
-import * as rainbowCatNFT from "/rainbow-cat.jpg";
+import * as rainbowCatNFT from "../../public/rainbow-cat.jpg";
 
 export const SimpleHero = () => {
   const bg = useColorModeValue("red.500", "red.200");
@@ -57,7 +61,8 @@ export const SimpleHero = () => {
                     size={useBreakpointValue({ base: "md", md: "xl" })}
                     color={headingColor}
                     textAlign="center"
-                    fontFamily="Gotham"
+                    // fontFamily="Gotham"
+                    className={inter.className}
                   >
                     Michelle Uy
                   </Heading>
