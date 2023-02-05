@@ -1,7 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  extendTheme,
+  type ThemeConfig,
+} from "@chakra-ui/react";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
@@ -12,7 +16,12 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const config: ThemeConfig = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
+
+const theme = extendTheme({ colors, config });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

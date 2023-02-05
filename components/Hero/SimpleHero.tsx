@@ -4,19 +4,27 @@ import {
   Box,
   Center,
   Container,
+  Flex,
   Heading,
-  HStack,
   IconButton,
   Link,
   Stack,
   useBreakpointValue,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 import { FiGithub } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import { RxLinkedinLogo } from "react-icons/rx";
 
 export const SimpleHero = () => {
+  const bg = useColorModeValue("red.500", "red.200");
+  const color = useColorModeValue("white", "gray.800");
+
+  const headingColor = useColorModeValue("#399CF9", "white");
+  const badgeTextColor = useColorModeValue("#399CF9", "white");
+
   return (
     <Box as="section" bg="bg-surface">
       <Box position="relative" height={{ lg: "720px" }}>
@@ -34,46 +42,66 @@ export const SimpleHero = () => {
                   align="stretch"
                 >
                   <Center>
-                    <Avatar
-                      name="Michelle Uy"
-                      size="2xl"
-                      src="/landing-profile-picture.jpg"
-                    />
+                    <Box borderRadius="50%" overflow="hidden">
+                      <Image
+                        src="/rainbow-cat.jpg"
+                        alt="Michelle Uy's rainbow cat NFT"
+                        width={150}
+                        height={150}
+                      />
+                    </Box>
                   </Center>
                   <Heading
                     size={useBreakpointValue({ base: "md", md: "xl" })}
-                    color="#399CF9"
+                    color={headingColor}
                     textAlign="center"
                     fontFamily="Gotham"
                   >
                     Michelle Uy
                   </Heading>
-                  <HStack>
-                    <Badge
-                      colorScheme="blue"
-                      alignSelf="start"
-                      borderRadius="7px"
-                      size={useBreakpointValue({ base: "md", md: "lg" })}
-                    >
-                      Software Engineer 👩🏻‍💻
-                    </Badge>
-                    <Badge
-                      colorScheme="blue"
-                      alignSelf="start"
-                      borderRadius="7px"
-                      size={useBreakpointValue({ base: "md", md: "lg" })}
-                    >
-                      Keyboard Enthusiast ⌨️
-                    </Badge>
-                    <Badge
-                      colorScheme="blue"
-                      alignSelf="start"
-                      borderRadius="7px"
-                      size={useBreakpointValue({ base: "md", md: "lg" })}
-                    >
-                      Animal Lover 🐶
-                    </Badge>
-                  </HStack>
+                  <Center>
+                    <Stack direction={{ base: "column", md: "row" }}>
+                      <Flex justifyContent="center">
+                        <Badge
+                          colorScheme="blue"
+                          alignSelf="start"
+                          borderRadius="7px"
+                          fontSize={useBreakpointValue({
+                            base: "md",
+                            md: "lg",
+                          })}
+                        >
+                          Software Engineer 👩🏻‍💻
+                        </Badge>
+                      </Flex>
+                      <Flex justifyContent="center">
+                        <Badge
+                          colorScheme="blue"
+                          alignSelf="start"
+                          borderRadius="7px"
+                          fontSize={useBreakpointValue({
+                            base: "md",
+                            md: "lg",
+                          })}
+                        >
+                          Keyboard Enthusiast ⌨️
+                        </Badge>
+                      </Flex>
+                      <Flex justifyContent="center">
+                        <Badge
+                          colorScheme="blue"
+                          alignSelf="start"
+                          borderRadius="7px"
+                          fontSize={useBreakpointValue({
+                            base: "md",
+                            md: "lg",
+                          })}
+                        >
+                          Animal Lover 🐶
+                        </Badge>
+                      </Flex>
+                    </Stack>
+                  </Center>
                 </Stack>
               </Stack>
               <Center>
@@ -89,14 +117,22 @@ export const SimpleHero = () => {
                       icon={<FiGithub size={30} />}
                     />
                   </Link>
-                  <Link href="https://linkedin.com/in/michelleuy" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https://linkedin.com/in/michelleuy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <IconButton
                       variant="ghost"
                       aria-label="Go to Linkedin Profile"
                       icon={<RxLinkedinLogo size={30} />}
                     />
                   </Link>
-                  <Link href="mailto:michelleuyccny@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="mailto:michelleuyccny@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <IconButton
                       variant="ghost"
                       aria-label="Email"
