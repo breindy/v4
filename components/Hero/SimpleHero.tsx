@@ -18,6 +18,8 @@ import { FiGithub } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import { RxLinkedinLogo } from "react-icons/rx";
 
+import * as rainbowCatNFT from "../../public/rainbow-cat.jpg";
+
 export const SimpleHero = () => {
   const bg = useColorModeValue("red.500", "red.200");
   const color = useColorModeValue("white", "gray.800");
@@ -44,7 +46,7 @@ export const SimpleHero = () => {
                   <Center>
                     <Box borderRadius="50%" overflow="hidden">
                       <Image
-                        src="/rainbow-cat.jpg"
+                        src={rainbowCatNFT}
                         alt="Michelle Uy's rainbow cat NFT"
                         width={150}
                         height={150}
