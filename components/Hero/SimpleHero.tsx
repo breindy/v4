@@ -18,7 +18,7 @@ import { FiGithub } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import { RxLinkedinLogo } from "react-icons/rx";
 
-import * as rainbowCatNFT from "../../public/rainbow-cat.jpg";
+import * as rainbowCatNFT from "/rainbow-cat.jpg";
 
 export const SimpleHero = () => {
   const bg = useColorModeValue("red.500", "red.200");
