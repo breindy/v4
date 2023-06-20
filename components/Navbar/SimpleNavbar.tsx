@@ -22,7 +22,7 @@ export default function SimpleNavbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box as="section">
+    <Box as="section" h="81px">
       <Box as="nav" bg="bg-surface">
         <Flex
           py={{ base: "4", lg: "5" }}

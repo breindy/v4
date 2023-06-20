@@ -107,3 +107,57 @@ a {
     color-scheme: dark;
   }
 }
+
+.simple-hero__section {
+  background-image: linear-gradient(80deg, rgb(5, 124, 172), rgb(67, 15, 187));
+  overflow: none;
+}
+
+#up {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    80deg,
+    rgb(5, 124, 172),
+    rgba(104, 255, 217, 0.909)
+  );
+  filter: blur(180px);
+  animation: down 5s infinite;
+}
+
+#down {
+  position: absolute;
+  right: 0;
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    80deg,
+    rgba(245, 207, 82, 0.8),
+    rgb(255, 44, 223)
+  );
+  filter: blur(180px);
+  animation: up 5s infinite;
+}
+
+@keyframes down {
+  0%,
+  100% {
+    top: 50px;
+  }
+  70% {
+    top: 300px;
+  }
+}
+
+@keyframes up {
+  0%,
+  100% {
+    bottom: 50px;
+  }
+  70% {
+    bottom: 300px;
+  }
+}

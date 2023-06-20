@@ -32,7 +32,17 @@ export const SimpleHero = () => {
   const badgeTextColor = useColorModeValue("#399CF9", "white");
 
   return (
-    <Box as="section" bg="bg-surface">
+    <Box
+      as="section"
+      bg="bg-surface"
+      className="simple-hero__section"
+      maxH="100vh"
+      minH="100vh"
+    >
+      <Box as="section" id="up" />
+      <Box as="section" id="down" />
+      <Box as="section" id="left" />
+      <Box as="section" id="right" />
       <Box position="relative" height={{ lg: "720px" }}>
         <Container py={{ base: "16", md: "24" }} height="full">
           <Stack
